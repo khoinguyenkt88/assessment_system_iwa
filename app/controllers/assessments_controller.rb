@@ -1,5 +1,6 @@
 class AssessmentsController < ApplicationController
   before_action :authenticate_user!
+  layout 'assessments'
 
   rescue_from CanCan::AccessDenied do |exception|
     sign_out
