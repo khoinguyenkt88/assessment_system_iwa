@@ -1,0 +1,7 @@
+tr
+  th scope="row"= user.name
+  td= user.email
+  td= user.role
+  td
+    = link_to 'Edit', edit_user_path(user)
+    = link_to 'Delete', user_path(user), class: 'split-link', method: :delete, data: { confirm: "Are you sure you want to delete the user with email '#{user.email}'?" } unless user == current_user

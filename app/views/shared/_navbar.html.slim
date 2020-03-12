@@ -1,0 +1,9 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+
+  #navbarNav.collapse.navbar-collapse
+    ul.nav.navbar-nav.ml-auto
+      - ApplicationHelper::NAVBAR_ITEMS.each do |controller_name, link|
+        li.nav-item class="#{current_controller?(controller_name) ? 'active' : ''}"
+          = link_to controller_name.titleize, (current_controller?(controller_name) ? '#' : link), class: 'nav-link'
+      li.nav-item
+        = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link'
