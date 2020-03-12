@@ -2,7 +2,10 @@ class UsersController < AssessmentsController
   load_and_authorize_resource
 
   def index
-    @users = User.all
+    @users = User.all.order(id: :desc)
+  end
+
+  def show
   end
 
   def new
@@ -12,7 +15,7 @@ class UsersController < AssessmentsController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to users_path, notice: "The user was created successfully."
+      redirect_to user_path(@user), notice: "The user was created successfully."
     else
       render 'new'
     end
@@ -25,7 +28,7 @@ class UsersController < AssessmentsController
     @user.assign_attributes(user_params)
 
     if @user.save
-      redirect_to users_path, notice: "The user was updated successfully."
+      redirect_to user_path(@user), notice: "The user was updated successfully."
     else
       render 'edit'
     end

@@ -1,0 +1,17 @@
+.container-wrapper.mt-5
+  = render_button('Back', 'arrow-left', users_path)
+  = render_button('Edit', 'edit', edit_user_path(@user), class: 'ml-1')
+  = render_button('Delete', 'trash', user_path(@user), class: 'ml-1', method: :delete, text: @user.email)
+  .user-details.form-shadow.pl-5.pr-5.pt-5.pb-3
+    .row.form-group
+      .col-md-3.font-weight-bold Name:
+      .col-md-9= @user.name
+    .row.form-group
+      .col-md-3.font-weight-bold Email:
+      .col-md-9= @user.email
+    .row.form-group
+      .col-md-3.font-weight-bold Password:
+      .col-md-9= "********"
+    .row.form-group
+      .col-md-3.font-weight-bold Role:
+      .col-md-9= @user.role

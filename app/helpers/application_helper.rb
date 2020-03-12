@@ -30,9 +30,15 @@ module ApplicationHelper
   end
 
   def render_button(text, icon_name, link, options = {})
-    link_to(link, class: "btn btn-primary mb-3 #{options[:class]}") do
-      content_tag(:i, nil, class: "fa fa-#{icon_name} ") +
-        content_tag(:span, text, class: 'ml-2')
+    link_to(link, class: "btn btn-primary mb-3 #{options[:class]}",
+      method: (options[:method] || :get),
+      data: { confirm: confirm_delete_message(options[:method], options[:text]) }) do
+        content_tag(:i, nil, class: "fa fa-#{icon_name}") +
+          content_tag(:span, text, class: 'ml-2')
     end
+  end
+
+  def confirm_delete_message(request_method, text)
+    request_method == :delete ? "Are you sure you want to delete the user with email '#{text}'?" : ""
   end
 end

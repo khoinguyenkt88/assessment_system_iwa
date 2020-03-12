@@ -26,7 +26,7 @@
       .col-md-3
         = f.label :role, class: 'col-form-label'
       .col-md-9
-        - if @user.id
+        - if @user == current_user
           = f.text_field :role, class: 'form-control-plaintext'
         - else
           = f.select :role, User::USER_ROLES, {}, class: 'form-control'

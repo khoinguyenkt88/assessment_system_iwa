@@ -3,10 +3,10 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    p 'KKKKKK', user
 
     if user.present? && user.is_a?(Teacher)
-      can %i[manage], User
+      can :manage, User
+      can :manage, Test
     end
   end
 end
