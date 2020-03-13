@@ -1,0 +1,18 @@
+
+= render_button('New Test', 'plus', new_test_path)
+.table-responsive.form-shadow
+  table.table.table-striped.tests-list.mb-0
+    thead.thead-dark
+      tr
+        th scope="col"  Name
+        th scope="col"  Description
+        th scope="col"  # Questions
+        th scope="col"  Actions
+    tbody
+      - if @tests.any?
+        - @tests.each do |assessment_test|
+          = render 'test_info', assessment_test: assessment_test
+      - else
+        tr
+          td colspan='4'
+            .text-center.font-weight-bold No Tests found

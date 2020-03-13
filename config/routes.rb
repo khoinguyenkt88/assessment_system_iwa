@@ -3,10 +3,14 @@ Rails.application.routes.draw do
 
   root "users#index"
 
-  resources :users do
+  scope :admin do
+    resources :users
 
-  end
-
-  resources :tests do
+    resources :tests do
+      resources :questions do
+        resources :options do
+        end
+      end
+    end
   end
 end

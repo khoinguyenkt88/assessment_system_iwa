@@ -1,0 +1,22 @@
+.test-form.form-shadow.pl-5.pr-5.pt-5.pb-3
+  = form_for(@test, url: action_url, method: (@test.persisted? ? :put : :post)) do |test_form|
+    = render "devise/shared/error_messages", resource: @test
+    .form-group.row
+      .col-md-3
+        = test_form.label :name, class: 'col-form-label required'
+      .col-md-9
+        = test_form.text_field :name, autofocus: true, class: 'form-control'
+    .form-group.row
+      .col-md-3
+        = test_form.label :description, class: 'col-form-label'
+      .col-md-9
+        = test_form.text_area :description, class: 'form-control'
+    hr
+    #nested-questions-wrapper
+      = test_form.fields_for :questions do |question_form|
+        = render 'question_fields', f: question_form
+      = render 'shared/add_assosiation_button', form: test_form, assosiation: :questions, button_text: '', class_name: 'btn-add-question hidden inactive-button', insert_node: '#nested-questions-wrapper', traversal: nil
+    .form-actions.form-group
+      = test_form.submit "Sign up", class: 'hidden inactive-button', id: 'btn-submit-new-test'
+  hr
+  = render 'button_bar'

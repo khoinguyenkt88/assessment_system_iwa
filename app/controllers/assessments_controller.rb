@@ -2,7 +2,12 @@ class AssessmentsController < ApplicationController
   before_action :authenticate_user!
   layout 'assessments'
 
-  rescue_from CanCan::AccessDenied do |exception|
+  EXCEPTIONS = [
+    ActionController::InvalidAuthenticityToken,
+    CanCan::AccessDenied
+  ].freeze
+
+  rescue_from *EXCEPTIONS do |exception|
     sign_out
     redirect_to new_user_session_path, notice: exception.message
   end

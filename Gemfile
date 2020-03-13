@@ -27,6 +27,7 @@ gem 'slim', '~> 3.0', '>= 3.0.6'
 gem 'bootstrap', '~> 4.4.1'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem "font-awesome-rails"
+gem 'cocoon', '~> 1.2', '>= 1.2.9'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

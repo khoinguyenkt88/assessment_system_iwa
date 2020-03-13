@@ -1,0 +1,9 @@
+.row.form-group
+  .col-md-3.pl-4.font-weight-bold Label:
+  .col-md-9= question.label
+.row.form-group
+  .col-md-3.pl-4.font-weight-bold Description:
+  .col-md-9= question.description
+.options-list.ml-3
+  - question.options.each do |option|
+    = render 'option_details', option: option
