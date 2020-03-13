@@ -35,7 +35,7 @@ class UsersController < AssessmentsController
   end
 
   def destroy
-    @user.destroy
+    @user.destroy!
     redirect_to users_path, notice: 'The user was deleted.'
   end
 

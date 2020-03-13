@@ -45,10 +45,7 @@ textarea {
   margin: 0 !important;
 }
 
-.container-wrapper {
-  margin-top: 100px !important;
-  margin-bottom: 100px !important;
-
+.container {
   .form-shadow {
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     border-radius: 10px;
@@ -70,4 +67,9 @@ textarea {
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     border-radius: 5px;
   }
+}
+
+.container-wrapper {
+  margin-top: 100px !important;
+  margin-bottom: 100px !important;
 }
