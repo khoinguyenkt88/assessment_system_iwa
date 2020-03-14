@@ -12,7 +12,7 @@ class Question < ApplicationRecord
   validates :label, length: { minimum: MINIMUM_LABEL_LENGTH }
 
   validate :check_options_number, on: %i[create update]
-  validate :has_at_least_one_correct_option, on: %i[create, update]
+  validate :has_at_least_one_correct_option, on: %i[create update]
 
   private
 
@@ -27,7 +27,6 @@ class Question < ApplicationRecord
   end
 
   def has_at_least_one_correct_option
-    p 'KKKKK', options.select { |e| e.correct }
     return true if options.select { |e| e.correct }.any?
 
     test.errors.add(:options, "should have at least #{OPTIONS_COUNT_MIN} option correct.")

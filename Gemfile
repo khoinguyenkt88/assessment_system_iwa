@@ -28,7 +28,9 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem "font-awesome-rails"
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
-
+gem 'active_model_serializers', '~> 0.9.7'
+gem 'apipie-rails', '~> 0.5.7'
+gem 'rack-cors', '~> 0.4.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -47,6 +49,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.9'
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'database_cleaner', '~> 1.5'
+  gem 'faker'
+  gem 'factory_bot_rails', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

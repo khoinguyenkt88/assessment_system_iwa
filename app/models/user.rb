@@ -11,6 +11,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :rememberable, :validatable
 
+  has_many :user_sessions
+
   validates_presence_of :name, :role
 
   validates :name, length: { maximum: MAX_STRING_LENGTH }

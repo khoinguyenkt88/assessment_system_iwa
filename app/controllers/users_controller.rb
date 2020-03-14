@@ -47,10 +47,6 @@ class UsersController < AssessmentsController
   end
 
   def standard_params
-    return if params.has_key?(:user)
-
-    params[:user] = params.dig(:teacher) || params.dig(:student)
-
     if params[:user][:password].blank? && params[:user][:password_confirmation].blank?
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)
