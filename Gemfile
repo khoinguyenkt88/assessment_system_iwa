@@ -30,7 +30,7 @@ gem "font-awesome-rails"
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'active_model_serializers', '~> 0.9.7'
 gem 'apipie-rails', '~> 0.5.7'
-gem 'rack-cors', '~> 0.4.0'
+gem 'rack-cors', '~> 1.0.5'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
