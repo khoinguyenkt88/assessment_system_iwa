@@ -10,14 +10,31 @@
 
 To get the app up and running run these commands:
 
-* Database creation
+```
+bundle install
+rake db:setup
+rails server
 
-* Database initialization
+```
+# API Docs
 
-* How to run the test suite
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+http://localhost:3000/api/v1/apipie
 
-* Deployment instructions
+```
 
-* ...
+# Demo
+
+```
+
+http://assessments-iwa-test.herokuapp.com/
+
+```
+
+# How to run the test suite
+
+```
+bundle rspec spec
+
+```
