@@ -1,3 +1,3 @@
 class OptionSerializer < ActiveModel::Serializer
-  attributes :id, :content, :correct
+  attributes :id, :content
 end
