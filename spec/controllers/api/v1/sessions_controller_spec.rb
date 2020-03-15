@@ -23,7 +23,7 @@ describe API::V1::SessionsController do
         it 'returns authentication failed message' do
           do_request
           expect(json_response['success']).to be_falsey
-          expect(json_response['message']).to eq('Authentication failed.')
+          expect(json_response['message']).to eq(I18n.t('api.v1.errors.authentication_failed'))
         end
       end
 

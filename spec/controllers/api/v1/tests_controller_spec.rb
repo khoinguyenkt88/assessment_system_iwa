@@ -35,7 +35,7 @@ describe API::V1::TestsController do
       it 'returns invalid token' do
         do_request
         expect(json_response['success']).to be_falsey
-        expect(json_response['message']).to eq 'Invalid token.'
+        expect(json_response['message']).to eq I18n.t('api.v1.errors.invalid_token')
       end
     end
   end
@@ -58,7 +58,7 @@ describe API::V1::TestsController do
       it 'returns invalid token' do
         do_request
         expect(json_response['success']).to be_falsey
-        expect(json_response['message']).to eq 'Invalid token.'
+        expect(json_response['message']).to eq I18n.t('api.v1.errors.invalid_token')
       end
     end
   end
@@ -71,7 +71,7 @@ describe API::V1::TestsController do
       it 'returns successful message' do
         do_request
         expect(json_response['success']).to be_truthy
-        expect(json_response['message']).to eq 'Your test answer was saved successfully.'
+        expect(json_response['message']).to eq I18n.t('api.v1.inform.save_answer_successful')
       end
     end
 
@@ -81,7 +81,7 @@ describe API::V1::TestsController do
       it 'returns invalid token' do
         do_request
         expect(json_response['success']).to be_falsey
-        expect(json_response['message']).to eq 'Invalid token.'
+        expect(json_response['message']).to eq I18n.t('api.v1.errors.invalid_token')
       end
     end
   end
