@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :users
 
       post :authenticate, to: 'sessions#create'
+      delete :authenticate, to: 'sessions#destroy'
 
       devise_scope :user do
         resource :sessions, only: %i[create destroy]

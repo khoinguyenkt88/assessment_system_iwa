@@ -14,6 +14,7 @@ module API
         param :email, String, desc: 'Student email', required: true
         param :password, String, desc: 'Student password', required: true
       end
+      example "curl -d 'user[email]=student2@example.com&user[password]=12345678' -X POST http://assessments-iwa-test.herokuapp.com/api/v1/authenticate"
       error code: 401, desc: "Your email or password is incorrect"
 
       def create
@@ -31,10 +32,19 @@ module API
         end
       end
 
+      api :DELETE, '/authenticate', "Logout"
+      description "Destroy session and logout student"
+      param :auth_token, String, desc: 'Token key', required: true
+      example 'curl -X DELETE http://assessments-iwa-test.herokuapp.com/api/v1/authenticate?auth_token=XXXXXXX'
+      error code: 403, desc: "Invalid token"
       def destroy
-        current_session&.destroy!
-        sign_out(:current_user)
-        render json: generate_response(success: true), status: 200
+        if current_session
+          current_session.destroy!
+          sign_out(:current_user)
+          render json: generate_response(success: true), status: 200
+        else
+          render json: generate_response(success: false, error: :invalid_token, message: 'Invalid token.'), status: 403
+        end
       end
     end
   end

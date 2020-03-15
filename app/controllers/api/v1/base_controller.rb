@@ -7,7 +7,7 @@ module API
       serialization_scope :current_user
 
       resource_description do
-        api_version "1"
+        api_version "1.0"
       end
 
       respond_to :json
