@@ -41,12 +41,12 @@ module API
         respond_with Test.find_by(id: params[:id]), serializer: FatTestSerializer
       end
 
-      api :POST, '/tests/:id/save_answer', 'Show test'
-      description "Return a test with questions"
+      api :POST, '/tests/:id/save_answer', 'Save test answers'
+      description "Save the student answers"
       param :auth_token, String, desc: "Token obtained from /authenticate", required: true
       example 'curl -X POST http://assessments-iwa-test.herokuapp.com/api/v1/tests/1/save_anwser?auth_token=XXXXXXX'
       returns code: 200, desc: 'Save answers successfully' do
-        property :success, Boolean, desc: 'True'
+        property :success, [true, false], desc: 'True'
         property :message, String, desc: 'Your test answers was saved successfully.'
       end
       error code: 401, desc: "Unauthorized"
