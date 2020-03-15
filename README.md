@@ -12,7 +12,7 @@ To get the app up and running run these commands:
 
 ```
 bundle install
-rake db:setup
+rails db:setup
 rails server
 ```
 # API Docs
