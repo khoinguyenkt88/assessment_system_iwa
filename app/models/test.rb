@@ -19,6 +19,6 @@ class Test < ApplicationRecord
   def check_questions_number
     return true if questions_count_valid?
 
-    errors.add(:questions, "should have at least #{QUESTIONS_COUNT_MIN} question defined.")
+    errors.add(:test, I18n.t('errors.has_at_least_correct', min_count: QUESTIONS_COUNT_MIN, model: 'question'))
   end
 end

@@ -14,7 +14,7 @@ class TestsController < AssessmentsController
     @test = Test.new(test_params)
 
     if @test.save
-      redirect_to test_path(@test), notice: 'The test was created successfully.'
+      redirect_to test_path(@test), notice: t('inform.action_successful', model: 'test', action: 'created')
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class TestsController < AssessmentsController
     @test.assign_attributes(test_params)
 
     if @test.save
-      redirect_to test_path(@test), notice: 'The test was updated successfully.'
+      redirect_to test_path(@test), notice: t('inform.action_successful', model: 'test', action: 'updated')
     else
       render 'edit'
     end
@@ -38,7 +38,7 @@ class TestsController < AssessmentsController
 
   def destroy
     @test.destroy!
-    redirect_to tests_path, notice: 'The test was deleted successfully.'
+    redirect_to tests_path, notice: t('inform.action_successful', model: 'test', action: 'deleted')
   end
 
   private

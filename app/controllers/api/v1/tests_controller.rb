@@ -47,11 +47,11 @@ module API
       example 'curl -X POST http://assessments-iwa-test.herokuapp.com/api/v1/tests/1/save_anwser?auth_token=XXXXXXX'
       returns code: 200, desc: 'Save answers successfully' do
         property :success, [true, false], desc: 'True'
-        property :message, String, desc: 'Your test answers was saved successfully.'
+        property :message, String, desc: 'Your test answers was saved successfully'
       end
       error code: 401, desc: "Unauthorized"
       def save_answer
-        render json: { success: true, message: 'Your test answers was saved successfully.' }
+        render json: generate_response(true, t('api.v1.inform.save_answer_successful')), status_code: 200
       end
     end
   end

@@ -1,5 +1,5 @@
 .container.mt-5.form-session.form-padding.form-shadow.pl-5.pr-5.pt-4.pb-5
-  h2.mb-5 Administrator Login
+  h2.mb-5= t('.title')
   hr
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .form-group

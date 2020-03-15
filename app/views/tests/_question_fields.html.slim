@@ -1,12 +1,12 @@
 .nested-fields.mb-5
   .form-group.row
     .col-md-10
-      = f.text_field :label, class: 'form-control', placeholder: 'Give the question a label here ...'
+      = f.text_field :label, class: 'form-control', placeholder: t('layout.placeholder.question_label')
     .col-md-2
       = render 'shared/remove_assosiation_button', form: f, class_name: 'float-right', button_text: ''
   .form-group.row
     .col-md-12
-      = f.text_field :description, class: 'form-control', placeholder: 'Enter a description here ...'
+      = f.text_field :description, class: 'form-control', placeholder: t('layout.placeholder.question_description')
   .nested-options-wrapper
     ol.nested-options-list
       = f.fields_for :options do |option_form|

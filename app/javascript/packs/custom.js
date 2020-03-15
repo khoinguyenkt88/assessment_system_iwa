@@ -7,5 +7,9 @@ var triggerButton = (buttonTrigger, button, event) => {
   buttonTrigger.on('click', (e) => {
     e.preventDefault();
     button.trigger(event);
+
+    if (buttonTrigger.hasClass('btn-trigger-add-question')){
+      $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+    };
   });
 }

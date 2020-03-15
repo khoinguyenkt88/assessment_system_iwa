@@ -41,6 +41,6 @@ module ApplicationHelper
 
   def confirm_delete_message(request_method, text, type)
     type ||= 'user'
-    request_method == :delete ? "Are you sure you want to delete the #{type} '#{text}'?" : ""
+    request_method == :delete ? t('inform.confirm', type: type, text: text) : ""
   end
 end

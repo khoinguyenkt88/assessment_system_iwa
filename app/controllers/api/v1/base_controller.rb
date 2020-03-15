@@ -13,7 +13,7 @@ module API
       respond_to :json
 
       rescue_from CanCan::AccessDenied do |exception|
-        render json: generate_response(success: false, message: exception.message)
+        render json: generate_response(false, exception.message), status_code: 403
       end
 
       def current_session
@@ -28,12 +28,12 @@ module API
           current_session.touch
           bypass_sign_in(current_session.user)
         else
-          render json: { success: false, error: :invalid_token, message: 'Invalid token.' }, status: 403
+          render json: generate_response(false, t('api.v1.errors.invalid_token'), :invalid_token), status_code: 403
         end
       end
 
-      def generate_response params = {}
-        { success: params[:success], error: params[:error], message: params[:message] }
+      def generate_response(success, message, error = nil)
+        { success: success, error: error, message: message }
       end
     end
   end

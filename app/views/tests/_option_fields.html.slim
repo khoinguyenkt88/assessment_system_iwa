@@ -2,7 +2,7 @@
   li
     .form-group.row
       .col-md-8
-        = f.text_field :content, class: 'form-control', placeholder: 'Enter the option content here ...'
+        = f.text_field :content, class: 'form-control', placeholder: t('layout.placeholder.option_content')
       .col-md-2.checkbox.mt-2
         = f.label :correct
           = f.check_box :correct, class: 'mr-2'

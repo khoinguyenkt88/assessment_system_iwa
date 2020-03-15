@@ -15,7 +15,7 @@ class UsersController < AssessmentsController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to user_path(@user), notice: "The user was created successfully."
+      redirect_to user_path(@user), notice: t('inform.action_successful', model: 'user', action: 'created')
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class UsersController < AssessmentsController
     @user.assign_attributes(user_params)
 
     if @user.save
-      redirect_to user_path(@user), notice: "The user was updated successfully."
+      redirect_to user_path(@user), notice: t('inform.action_successful', model: 'user', action: 'updated')
     else
       render 'edit'
     end
@@ -36,7 +36,7 @@ class UsersController < AssessmentsController
 
   def destroy
     @user.destroy!
-    redirect_to users_path, notice: 'The user was deleted.'
+    redirect_to users_path, notice: t('inform.action_successful', model: 'user', action: 'deleted')
   end
 
   private

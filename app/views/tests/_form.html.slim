@@ -17,6 +17,6 @@
         = render 'question_fields', f: question_form
       = render 'shared/add_assosiation_button', form: test_form, assosiation: :questions, button_text: '', class_name: 'btn-add-question hidden inactive-button', insert_node: '#nested-questions-wrapper', traversal: nil
     .form-actions.form-group
-      = test_form.submit "Sign up", class: 'hidden inactive-button', id: 'btn-submit-new-test'
+      = test_form.submit "", class: 'hidden inactive-button', id: 'btn-submit-new-test'
   hr
   = render 'button_bar'

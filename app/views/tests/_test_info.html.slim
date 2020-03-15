@@ -5,4 +5,4 @@ tr
   td= assessment_test.questions.size
   td
     = link_to 'Edit', edit_test_path(assessment_test)
-    = link_to 'Delete', test_path(assessment_test), class: 'split-link', method: :delete, data: { confirm: "Are you sure you want to delete the test '#{assessment_test.name}'?" }
+    = link_to 'Delete', test_path(assessment_test), class: 'split-link', method: :delete, data: { confirm: t('inform.confirm', type: 'test', text: assessment_test.name) }

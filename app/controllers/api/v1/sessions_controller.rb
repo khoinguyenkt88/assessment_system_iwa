@@ -28,7 +28,7 @@ module API
 
           respond_with user, serializer: UserSerializer
         else
-          render json: generate_response(success: false, error: :invalid_credentials, message: 'Authentication failed.'), status: 401
+          render json: generate_response(false, t('api.v1.errors.authentication_failed'), :invalid_credentials), status: 401
         end
       end
 
@@ -41,9 +41,9 @@ module API
         if current_session
           current_session.destroy!
           sign_out(:current_user)
-          render json: generate_response(success: true), status: 200
+          render json: generate_response(true, t('api.v1.inform.logged_out')), status: 200
         else
-          render json: generate_response(success: false, error: :invalid_token, message: 'Invalid token.'), status: 403
+          render json: generate_response(false, t('api.v1.errors.invalid_token', :invalid_token)), status: 403
         end
       end
     end

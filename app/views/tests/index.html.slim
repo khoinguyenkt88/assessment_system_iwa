@@ -1,13 +1,13 @@
 
-= render_button('New Test', 'plus', new_test_path)
+= render_button(t('layout.btn.add_test'), 'plus', new_test_path)
 .table-responsive.form-shadow
   table.table.table-striped.tests-list.mb-0
     thead.thead-dark
       tr
-        th scope="col"  Name
-        th scope="col"  Description
-        th scope="col"  # Questions
-        th scope="col"  Actions
+        th scope="col"= t('.name')
+        th scope="col"= t('.description')
+        th scope="col"= t('.num_questions')
+        th scope="col"= t('.actions')
     tbody
       - if @tests.any?
         - @tests.each do |assessment_test|
@@ -15,4 +15,4 @@
       - else
         tr
           td colspan='4'
-            .text-center.font-weight-bold No Tests found
+            .text-center.font-weight-bold= t('.errors.no_tests_found')
