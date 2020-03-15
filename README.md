@@ -1,15 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Assessment System - IWA Test
 
-Things you may want to cover:
+* Ruby version: ruby 2.7.0-p0
 
-* Ruby version
+* Rails version: rails-6.0.2.1
 
-* System dependencies
+# Getting Started
 
-* Configuration
+To get the app up and running run these commands:
 
 * Database creation
 
