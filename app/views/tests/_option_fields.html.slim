@@ -1,0 +1,11 @@
+.nested-fields
+  li
+    .form-group.row
+      .col-md-8
+        = f.text_field :content, class: 'form-control', placeholder: t('layout.placeholder.option_content')
+      .col-md-2.checkbox.mt-2
+        = f.label :correct
+          = f.check_box :correct, class: 'mr-2'
+          | correct answer
+      .col-md-2
+        = render 'shared/remove_assosiation_button', form: f, class_name: 'float-right', button_text: ''

@@ -30,4 +30,45 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+      has_at_least_defined: "should have at least %{min_count} %{model} defined"
+      has_at_least_defined: "should have at least %{min_count} %{model} defined"
+      has_at_least_correct: "should have at least %{min_count} %{model} correct"
+  api:
+    v1:
+      errors:
+        invalid_token: Invalid token
+        authentication_failed: Authentication failed
+      inform:
+        logged_out: Logged out
+        save_answer_successful: Your test answers was saved successfully
+  inform:
+    action_successful: "The %{model} was %{action} successfully"
+    confirm: "Are you sure you want to delete the %{type} '%{text}'?"
+  devise:
+    sessions:
+      new:
+        title: Administrator Login
+  tests:
+    index:
+      name: Name
+      description: Description
+      num_questions: '# Questions'
+      actions: Actions
+      errors:
+        no_tests_found: No Tests found
+  layout:
+    title: Assessment System - IWA Test
+    sign_out: Sign out
+    btn:
+      delete: "Delete %{button_text}"
+      back: Back
+      save: Save
+      edit: Edit
+      add_test: New Test
+      add_question: Question
+      add_option: Option
+    placeholder:
+      option_content: Enter the option content here ...
+      question_label: Give the question a label here ...
+      question_description: Enter a description here ...

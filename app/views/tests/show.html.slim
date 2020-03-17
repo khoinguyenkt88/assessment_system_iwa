@@ -1,0 +1,15 @@
+= render_button(t('layout.btn.back'), 'arrow-left', :back)
+= render_button(t('layout.btn.edit'), 'edit', edit_test_path(@test), class: 'ml-1')
+= render_button(t('layout.btn.delete', button_text: ''), 'trash', test_path(@test), class: 'ml-1', method: :delete, text: @test.name, type: 'test')
+.user-details.form-shadow.pl-5.pr-5.pt-5.pb-3
+  .row.form-group
+    .col-md-3.font-weight-bold Name:
+    .col-md-9= @test.name
+  .row.form-group
+    .col-md-3.font-weight-bold Description:
+    .col-md-9= @test.description
+  .questions-list
+    - @test.questions.each do |question|
+      = render 'question_details', question: question
+      br
+      hr

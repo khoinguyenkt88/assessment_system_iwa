@@ -1,0 +1,8 @@
+tr
+  th scope="row"
+    = link_to assessment_test.name, test_path(assessment_test)
+  td= assessment_test.description
+  td= assessment_test.questions.size
+  td
+    = link_to 'Edit', edit_test_path(assessment_test)
+    = link_to 'Delete', test_path(assessment_test), class: 'split-link', method: :delete, data: { confirm: t('inform.confirm', type: 'test', text: assessment_test.name) }
